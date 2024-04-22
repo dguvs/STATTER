@@ -1,14 +1,15 @@
 document.getElementById('searchForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const accountName = document.getElementById('searchInput').value.trim();
-    if (!accountName) {
-        alert('Please enter an account name.');
+    const selectedRegion = document.getElementById('regionSelect').value.trim();
+
+    if (!accountName || !selectedRegion) {
+        alert('Please enter an account name and select a region.');
         return;
     }
 
-    // Store the account name in sessionStorage or localStorage
     sessionStorage.setItem('accountName', accountName);
+    sessionStorage.setItem('region', selectedRegion);
 
-    // Redirect to the statistics page
     window.location.href = 'stats.html';
 });

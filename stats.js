@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const accountName = sessionStorage.getItem('accountName');
-    if (!accountName) {
+    const region = sessionStorage.getItem('region');
+
+    if (!accountName || !region) {
         document.getElementById('results').innerHTML = '<p>No account information found. Please search again.</p>';
         return;
     }
 
-    fetchPlayerStats(accountName);
+    fetchPlayerStats(accountName, region);
 });
 
-function fetchPlayerStats(accountName) {
+function fetchPlayerStats(accountName, region) {
+    // Example function body, replace with actual API call and handle region
     const playerStats = {
         rank: 'Gold IV',
         gamesPlayed: 342,
@@ -21,7 +24,8 @@ function fetchPlayerStats(accountName) {
     displayStats(playerStats);
 }
 
-function displayStats(stats) {
+
+function displayStats(stats) {  
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = `<p>Rank: ${stats.rank}</p>
                             <p>Games Played: ${stats.gamesPlayed}</p>

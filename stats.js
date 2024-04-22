@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Statistics</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Statistics for Your League of Legends Account</h1>
-    </header>
-    <main id="results">
-        <!-- Statistics will be loaded here -->
-    </main>
-    <footer>
-        <p>League of Legends Statistics Tracker © 2024</p>
-    </footer>
-    <script src="stats.js"></script>
-</body>
-</html>
+document.addEventListener('DOMContentLoaded', function() {
+    const accountName = sessionStorage.getItem('accountName');
+    if (!accountName) {
+        document.getElementById('results').innerHTML = '<p>No account information found. Please search again.</p>';
+        return;
+    }
+
+    fetchPlayerStats(accountName);
+});
+
+function fetchPlayerStats(accountName) {
+    const playerStats = {
+        rank: 'Gold IV',
+        gamesPlayed: 342,
+        highestWinRateChampion: {
+            name: 'Yasuo',
+            winRate: '57%'
+        }
+    };
+
+    displayStats(playerStats);
+}
+
+function displayStats(stats) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `<p>Rank: ${stats.rank}</p>
+                            <p>Games Played: ${stats.gamesPlayed}</p>
+                            <p>Highest Win Rate Champion: ${stats.highestWinRateChampion.name} - ${stats.highestWinRateChampion.winRate}</p>`;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Statistics for Your League of Legends Account</h1>
+    </header>
+    <main id="results">
+        <!-- Statistics will be loaded here -->
+    </main>
+    <footer>
+        <p>League of Legends Statistics Tracker © 2024</p>
+    </footer>
+    <script src="stats.js"></script>
+</body>
+</html>

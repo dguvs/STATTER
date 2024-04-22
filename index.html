@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>League of Legends Stats</title>
+    <title>Search for League of Legends Stats</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>League of Legends Statistics</h1>
-    <div id="statsContainer"></div>
+    <header>
+        <h1>League of Legends Player Statistics Tracker</h1>
+        <p>Enter your LoL account name to see statistics.</p>
+    </header>
+    <main>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Enter your LoL account name..." required>
+            <button type="submit">Search</button>
+        </form>
+    </main>
+    <footer>
+        <p>League of Legends Statistics Tracker © 2024</p>
+    </footer>
     <script src="app.js"></script>
 </body>
-</html>
+</html> 
